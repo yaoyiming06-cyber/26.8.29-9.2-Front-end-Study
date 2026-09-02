@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阶段 0 学习主页 · 郭兆辉的前端学习</title>
+  <style>
+    /* ===== 页面整体 ===== */
+    body {
+      background-color: #f5f7fa;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #24292f;
+      line-height: 1.8;
+      margin: 0;
+    }
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    /* ===== 顶部 ===== */
+    .hero {
+      background: linear-gradient(135deg, #1f6feb, #0f4fb8);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 36px 28px;
+      margin-bottom: 24px;
+    }
+    .hero h1 { margin: 0 0 8px; font-size: 30px; }
+    .hero p { margin: 0; opacity: 0.92; }
+
+    .progress { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .chip {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    /* ===== 课程卡片 ===== */
+    .lesson {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin-bottom: 20px;
+      border-top: 4px solid #d0d7de;
+    }
+    .lesson.done { border-top-color: #16a34a; }
+    .lesson.now  { border-top-color: #f59e0b; }
+    .lesson h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+    .badge {
+      font-size: 13px;
+      font-weight: normal;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .badge.green { background: #dcfce7; color: #15803d; }
+    .badge.orange { background: #fef3c7; color: #b45309; }
+    .badge.gray { background: #f1f5f9; color: #64748b; }
+
+    h3 {
+      font-size: 17px;
+      margin: 24px 0 8px;
+      border-left: 4px solid #1f6feb;
+      padding-left: 10px;
+    }
+
+    /* ===== 表格 ===== */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 12px 0;
+      font-size: 15px;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th { background: #f8fafc; }
+
+    /* ===== 代码 ===== */
+    code {
+      background: #eef2f7;
+      color: #c7254e;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 90%;
+    }
+    pre {
+      background: #0d1117;
+      color: #e6edf3;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+    pre code { background: none; color: inherit; padding: 0; }
+
+    /* ===== 提示块 ===== */
+    .note, .tip, .warn {
+      border-left: 4px solid;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin: 14px 0;
+      font-size: 15px;
+    }
+    .note { border-color: #1f6feb; background: #eff6ff; }
+    .tip  { border-color: #16a34a; background: #f0fdf4; }
+    .warn { border-color: #f59e0b; background: #fffbeb; }
+
+    a { color: #1f6feb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .filelist { columns: 2; padding-left: 20px; }
+    @media (max-width: 600px) { .filelist { columns: 1; } }
+
+    footer {
+      text-align: center;
+      color: #8b949e;
+      font-size: 14px;
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= 顶部 ================= -->
+  <header class="hero">
+    <h1>🚀 阶段 0 学习主页</h1>
+    <p>郭兆辉 · 前端学习路线 · 地基阶段(HTML / CSS / JS / Git)</p>
+    <div class="progress">
+      <span class="chip">第 1 课 HTML ✅ 毕业</span>
+      <span class="chip">第 2 课 CSS ✅ 毕业</span>
+      <span class="chip">第 3 课 JS ✅ 毕业</span>
+      <span class="chip">第 4 课 Git 🔜 下一课</span>
+      <span class="chip">毕业项目 ⏳ 待开始</span>
+    </div>
+  </header>
+
+  <!-- ================= 第 1 课 ================= -->
+  <section class="lesson done">
+    <h2>第 1 课:HTML —— 网页的骨架<span class="badge green">✅ 已毕业</span></h2>
+
+    <h3>网页由三层组成</h3>
+    <table>
+      <tr><th>层</th><th>语言</th><th>作用</th><th>比喻</th></tr>
+      <tr><td>结构</td><td>HTML</td><td>有什么内容</td><td>人的骨架</td></tr>
+      <tr><td>样式</td><td>CSS</td><td>长什么样</td><td>人的衣服</td></tr>
+      <tr><td>行为</td><td>JavaScript</td><td>能做什么</td><td>人的动作</td></tr>
+    </table>
+
+    <h3>页面必备骨架</h3>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-CN"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;标签页上的标题&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- 页面上能看到的一切,都写在这里 --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h3>6 个核心标签</h3>
+    <table>
+      <tr><th>标签</th><th>作用</th><th>写法</th></tr>
+      <tr><td>&lt;h1&gt;~&lt;h6&gt;</td><td>标题,h1 全页唯一,数字越小字越大</td><td>&lt;h1&gt;你好&lt;/h1&gt;</td></tr>
+      <tr><td>&lt;p&gt;</td><td>段落</td><td>&lt;p&gt;一段话&lt;/p&gt;</td></tr>
+      <tr><td>&lt;strong&gt;</td><td>加粗强调</td><td>&lt;strong&gt;重点&lt;/strong&gt;</td></tr>
+      <tr><td>&lt;ul&gt; + &lt;li&gt;</td><td>圆点列表</td><td>&lt;ul&gt;&lt;li&gt;项&lt;/li&gt;&lt;/ul&gt;</td></tr>
+      <tr><td>&lt;a href="网址"&gt;</td><td>链接</td><td>&lt;a href="https://baidu.com"&gt;百度&lt;/a&gt;</td></tr>
+      <tr><td>&lt;!-- --&gt;</td><td>注释,浏览器不显示</td><td>&lt;!-- 给自己看 --&gt;</td></tr>
+    </table>
+
+    <div class="tip">
+      <strong>📝 作业批改记录(14/14 通过)</strong><br>
+      做得好的:strong 用对了位置、viewport 是隐藏加分项、注释写的是真事、缩进工整。<br>
+      修改过的 3 处:两个 h1 降级为 h2、链接移出标题、lang 等号去空格 —— 全部正确 ✅
+    </div>
+
+    <h3>参考资料</h3>
+    <ul class="filelist">
+      <li><a href="lesson01-example.html">lesson01-example.html</a>(示例)</li>
+      <li><a href="lesson01.html">lesson01.html</a>(你的作业)</li>
+      <li><a href="cheatsheet-html.md">cheatsheet-html.md</a>(速查卡)</li>
+      <li><a href="quiz01-html.md">quiz01-html.md</a>(自查测验)</li>
+      <li><a href="check-lesson01.mjs">check-lesson01.mjs</a>(验收脚本)</li>
+    </ul>
+  </section>
+
+  <!-- ================= 第 2 课 ================= -->
+  <section class="lesson done">
+    <h2>第 2 课:CSS —— 给网页穿衣服<span class="badge green">✅ 已毕业</span></h2>
+
+    <h3>核心语法(整个 CSS 就这一句话)</h3>
+    <pre><code>选择器 {
+  属性: 值;
+}</code></pre>
+    <p>"选中谁,改成什么样"。例如 <code>h1 { color: #1f6feb; }</code> 表示所有 h1 文字变蓝。</p>
+
+    <h3>选择器:怎么"选中"标签</h3>
+    <table>
+      <tr><th>选择器</th><th>写法</th><th>特点</th></tr>
+      <tr><td>标签选择器</td><td><code>p { }</code></td><td>命中所有 &lt;p&gt;</td></tr>
+      <tr><td>class 选择器</td><td><code>.card { }</code> + 标签挂 <code>class="card"</code></td><td>可复用,最常用</td></tr>
+    </table>
+
+    <h3>盒模型(唯一要"理解"的东西)</h3>
+    <pre><code>margin(外边距:和别人隔多远)
+  └ border(边框)
+      └ padding(内边距:内容和边框之间留多少)
+          └ 内容</code></pre>
+    <p>两个高频问题:文字太挤 → 加 <code>padding</code> 或 <code>line-height</code>;盒子水平居中 → <code>max-width: 600px;</code> + <code>margin: 0 auto;</code></p>
+
+    <h3>本课属性清单</h3>
+    <table>
+      <tr><th>属性</th><th>作用</th><th>例子</th></tr>
+      <tr><td>color</td><td>文字颜色</td><td><code>color: #555;</code></td></tr>
+      <tr><td>background-color</td><td>背景色</td><td><code>background-color: #fff;</code></td></tr>
+      <tr><td>font-family</td><td>字体</td><td><code>font-family: sans-serif;</code></td></tr>
+      <tr><td>line-height</td><td>行高</td><td><code>line-height: 1.8;</code></td></tr>
+      <tr><td>padding</td><td>内边距</td><td><code>padding: 24px;</code></td></tr>
+      <tr><td>margin</td><td>外边距</td><td><code>margin: 40px auto;</code></td></tr>
+      <tr><td>border-radius</td><td>圆角</td><td><code>border-radius: 12px;</code></td></tr>
+      <tr><td>border-left</td><td>左边框(小标题装饰)</td><td><code>border-left: 4px solid #1f6feb;</code></td></tr>
+    </table>
+
+    <h3>✍️ 作业(合并第 1 课修改)</h3>
+    <p>新建 <code>lesson02.html</code>(复制 lesson01 的内容当底子):</p>
+    <ol>
+      <li>第 1 课欠的 3 处修改:两处 h1 降级为 h2、链接移出标题、lang 去空格</li>
+      <li>加 <code>&lt;style&gt;</code> 块:body 换背景色 + 字体</li>
+      <li>用 <code>.card</code> class 包住全部内容 → 白色圆角卡片 + 水平居中</li>
+      <li>h1 换颜色,段落加行高、换颜色</li>
+      <li>至少一个小标题加左边框装饰</li>
+      <li>自己挑一个喜欢的配色(财经科技风建议深蓝 <code>#1f6feb</code> 或墨绿 <code>#0f766e</code>)</li>
+    </ol>
+    <div class="note">
+      验收命令:<br>
+      <code>node check-lesson02.mjs lesson02.html</code><br>
+      看到 <strong>9/9 ✅</strong> 后在聊天里说一声"改好了"。
+    </div>
+
+    <div class="tip">
+      <strong>📝 作业批改记录(9/9 通过)</strong><br>
+      做得好的:两个标题共用 .Frame 实现 class 复用、用了 rgb() 颜色写法、coral + darkslategrey 配色有自己审美。<br>
+      小建议:class 命名用小写连字符(如 .section-title);HTML 属性等号两边不加空格;选择器与大括号之间留空格(body {)。
+    </div>
+
+    <h3>分级提示卡(卡住 10 分钟再看下一级)</h3>
+    <p><strong>提示 1</strong>:先复制内容进 lesson02.html → 在 &lt;head&gt; 的 &lt;title&gt; 之后加 &lt;style&gt; 块 → 改一步保存一步刷新看效果。</p>
+    <p><strong>提示 2</strong>:&lt;style&gt; 块只有框架:<code>&lt;style&gt; /* 你的 CSS */ &lt;/style&gt;</code>,规则格式 <code>选择器 { 属性: 值; }</code>。</p>
+    <p><strong>提示 3</strong>:每个要求对应的属性名 → 背景色 background-color / 字体 font-family / 圆角 border-radius / 居中 max-width + margin / 内距 padding / 行高 line-height / 左边框 border-left。</p>
+    <p><strong>提示 4</strong>:实在卡死才翻 <a href="lesson02-example.html">lesson02-example.html</a>,翻完关掉它自己默写一遍。</p>
+
+    <h3>参考资料</h3>
+    <ul class="filelist">
+      <li><a href="lesson02-example.html">lesson02-example.html</a>(标准示例)</li>
+      <li><a href="lesson02-preview.html">lesson02-preview.html</a>(你的页面化妆后)</li>
+      <li><a href="cheatsheet-css.md">cheatsheet-css.md</a>(速查卡)</li>
+      <li><a href="lesson02-hints.md">lesson02-hints.md</a>(分级提示卡)</li>
+      <li><a href="check-lesson02.mjs">check-lesson02.mjs</a>(验收脚本)</li>
+    </ul>
+  </section>
+
+      <!-- ================= 第 3 课 ================= -->
+  <section class="lesson done">
+    <h2>第 3 课:JavaScript 基础(完整版)<span class="badge green">✅ 已毕业</span></h2>
+
+    <p>本课分 4 个部分,按顺序学,每部分都有动手练习:</p>
+    <p>
+      <a href="#js-a">A 语法与类型</a> ·
+      <a href="#js-b">B 循环·数组·函数</a> ·
+      <a href="#js-c">C DOM 三件套(作业1)</a> ·
+      <a href="#js-d">D DOM 进阶(作业2)</a>
+    </p>
+
+    <!-- ========== A ========== -->
+    <h3 id="js-a">A. 语法与类型</h3>
+
+    <p><strong>JS 写在哪?</strong>写在 <code>&lt;script&gt;</code> 标签里,放 <code>&lt;/body&gt;</code> 前面(页面先加载,JS 才能操作页面)。</p>
+    <p><strong>调试工具:</strong>浏览器里按 <code>F12</code> 打开开发者工具 → <code>Console</code> 面板。<code>console.log(内容)</code> 会把内容打印到控制台,这是程序员的"眼睛"。</p>
+
+    <p><strong>① 变量:装数据的盒子</strong></p>
+    <pre><code>let count = 0;        // let:值以后会变
+const name = '小明';  // const:值不变(最常用)
+count = count + 1;    // let 可以改
+// name = '小红';      // ❌ 会报错,const 不能改</code></pre>
+
+    <p><strong>② 数据类型(5 种常用)</strong></p>
+    <table>
+      <tr><th>类型</th><th>例子</th><th>说明</th></tr>
+      <tr><td>string 字符串</td><td><code>'你好'</code>、<code>"abc"</code></td><td>引号包起来</td></tr>
+      <tr><td>number 数字</td><td><code>42</code>、<code>3.14</code></td><td>不区分整数小数</td></tr>
+      <tr><td>boolean 布尔</td><td><code>true</code> / <code>false</code></td><td>只有两个值</td></tr>
+      <tr><td>null</td><td><code>null</code></td><td>"空",故意留空</td></tr>
+      <tr><td>undefined</td><td><code>undefined</code></td><td>"没定义",变量还没赋值</td></tr>
+    </table>
+    <p><code>typeof 值</code> 可以查类型:<code>typeof 'hi'</code> → <code>'string'</code>,<code>typeof 42</code> → <code>'number'</code>。</p>
+
+    <p><strong>③ 运算符</strong></p>
+    <pre><code>// 算术
+1 + 2      // 3
+5 - 3      // 2
+2 * 4      // 8
+7 / 2      // 3.5
+7 % 2      // 1  取余数(判断奇偶: n % 2 === 0 就是偶数)
+
+// 比较(结果永远是 true/false)
+1 === 1        // true
+1 === '1'      // false  数字1 不等于 字符串'1'
+1 !== 2        // true
+5 > 3          // true
+5 <= 5         // true
+
+// 逻辑
+true && false   // false  且(两个都真才真)
+true || false   // true   或(一个真就真)
+!true           // false  非(取反)</code></pre>
+
+    <p><strong>④ 字符串操作</strong></p>
+    <pre><code>const name = 'guo zhaohui';
+
+name.length              // 11  长度
+name.toUpperCase()       // 'GUO ZHAOHUI'
+'你好' + name + '!'      // 用 + 拼接
+`你好,${name}!`          // 模板字符串(反引号 + ${变量})</code></pre>
+
+    <p><strong>⑤ 条件判断</strong></p>
+    <pre><code>const score = 85;
+
+if (score >= 90) {
+  console.log('优秀');
+} else if (score >= 60) {
+  console.log('及格');
+} else {
+  console.log('加油');
+}
+
+// 简写版(三元运算符): 条件 ? 真时 : 假时
+const result = score >= 60 ? '及格' : '加油';</code></pre>
+
+    <div class="note">
+      <strong>✍️ 练习 A(在浏览器控制台做,10 分钟)</strong><br>
+      1. 建变量 <code>age = 20</code>,打印 <code>typeof age</code><br>
+      2. 算 <code>2026 - age</code> 是几?<br>
+      3. 用模板字符串打印:我是XXX,今年20岁<br>
+      4. 判断 <code>age >= 18</code> 用 if 打印"成年"或"未成年"<br>
+      5. 试一个会报错的:<code>console.log(noSuchVar)</code>,读一读报错信息长什么样
+    </div>
+
+    <!-- ========== B ========== -->
+    <h3 id="js-b">B. 循环 · 数组 · 函数</h3>
+
+    <p><strong>① for 循环:重复做一件事</strong></p>
+    <pre><code>// for (从几开始; 到哪结束; 每轮怎么变)
+for (let i = 0; i < 5; i++) {
+  console.log('第', i, '次');   // 打印 第 0 次 ... 第 4 次
+}
+
+let n = 0;
+while (n < 3) {          // while 循环
+  console.log(n);
+  n = n + 1;
+}</code></pre>
+
+    <p><strong>② 数组:一列数据</strong></p>
+    <pre><code>const hobbies = ['财经', '科技', '旅行'];
+
+hobbies[0]            // '财经'   下标从 0 开始
+hobbies.length        // 3        长度
+hobbies.push('游戏')   // 末尾加一项 → ['财经','科技','旅行','游戏']
+hobbies.pop()         // 去掉最后一项
+
+// 遍历:把每项都拿出来
+for (let i = 0; i < hobbies.length; i++) {
+  console.log(hobbies[i]);
+}</code></pre>
+
+    <p><strong>③ 函数:把一段代码打包,起个名字重复用</strong></p>
+    <pre><code>// 声明:参数在括号里,return 交回结果
+function add(a, b) {
+  return a + b;
+}
+add(2, 3);   // 5
+add(10, 20); // 30
+
+// 箭头函数(简写)
+const double = (x) => x * 2;
+double(4);   // 8</code></pre>
+
+    <div class="note">
+      <strong>✍️ 练习 B(控制台,15 分钟)</strong><br>
+      1. 用 for 循环打印 1~10 的所有偶数<br>
+      2. 建数组 <code>scores = [88, 92, 75, 100]</code>,用循环求总和与平均分<br>
+      3. 写函数 <code>max(a, b)</code> 返回较大的数,测 3 组数据<br>
+      4. 写函数 <code>isEven(n)</code> 判断偶数(用 <code>%</code>)
+    </div>
+
+    <!-- ========== C ========== -->
+    <h3 id="js-c">C. DOM 三件套(作业 1)</h3>
+
+    <p>DOM = 把页面上的元素当对象操作。核心三件套:</p>
+    <pre><code>// 1. 抓元素(# = id,. = class,不加前缀 = 标签名)
+const btn = document.querySelector('#greetBtn');
+const inputs = document.querySelectorAll('li');   // 抓多个,得到列表
+
+// 2. 监听事件
+btn.addEventListener('click', function () {
+  // 3. 读写内容
+  const name = document.querySelector('#nameInput').value;  // 读输入框
+  document.querySelector('#greeting').textContent = '你好,' + name;  // 写文字
+});</code></pre>
+
+    <p><strong>常用读写属性:</strong></p>
+    <table>
+      <tr><th>写法</th><th>作用</th></tr>
+      <tr><td><code>el.textContent = '...'</code></td><td>改写元素的纯文字</td></tr>
+      <tr><td><code>el.value</code></td><td>读/写输入框内容</td></tr>
+      <tr><td><code>el.classList.add('red')</code></td><td>给元素加 class(配 CSS 变色)</td></tr>
+      <tr><td><code>el.classList.remove('red')</code></td><td>去掉 class</td></tr>
+    </table>
+
+    <div class="warn">
+      <strong>✍️ 作业 1:打招呼页面</strong> → 新建 <code>lesson03.html</code>(复制 lesson02 当底子)<br>
+      输入框 + "打招呼"按钮 + 空段落;点击后读 <code>.value</code>,用 <code>if</code> 判断:空则提示"先输入名字",否则显示"你好,xxx!"。<br>
+      验收:<code>node check-lesson03.mjs lesson03.html</code>,7/7 后回我"改好了"。
+    </div>
+
+    <!-- ========== D ========== -->
+    <h3 id="js-d">D. DOM 进阶(作业 2)</h3>
+
+    <p><strong>① 计数器:变量要放在函数外面</strong>(放里面每次点击都会被重置)</p>
+    <pre><code>let count = 0;   // 全局状态,记住点了多少次
+
+const btn = document.querySelector('#addBtn');
+const show = document.querySelector('#countShow');
+
+btn.addEventListener('click', function () {
+  count = count + 1;      // 累加
+  show.textContent = count;   // 显示
+});</code></pre>
+
+    <p><strong>② 动态列表:用 JS 创建新元素</strong></p>
+    <pre><code>const list = document.querySelector('#list');
+
+function addItem(text) {
+  const li = document.createElement('li');   // 造一个新 li
+  li.textContent = text;                     // 填内容
+  list.appendChild(li);                      // 挂到列表末尾
+}
+addItem('关注财经');   // 调用一次,页面就多一行</code></pre>
+
+    <p><strong>③ 实时输入事件:</strong>不用点按钮,输入时立刻响应——把 <code>'click'</code> 换成 <code>'input'</code> 即可。</p>
+
+    <div class="warn">
+      <strong>✍️ 作业 2:计数器 + 待办清单</strong> → 新建 <code>lesson03b.html</code>(无自动脚本,发我人工批改)<br>
+      ① 一个数字显示区 + "+1"按钮(点一次加一)<br>
+      ② 一个输入框 + "添加"按钮,点击把输入内容变成新的一行 &lt;li&gt; 加到列表里<br>
+      ③ 加分项:给添加按钮加判断,空内容不许添加(提示用户)
+    </div>
+
+    <div class="tip">
+      <strong>📝 批改记录(最终版)</strong><br>
+      作业 1(打招呼)7/7 ✅ 毕业。做得好的:模板字符串、button 用了 cursor:pointer、卡片风格统一。<br>
+      作业 2(计数器+待办)<strong>三轮修正后验收通过 ✅</strong>(详见下方答疑记录区):平级监听 ✅、用 judge 变量实现"先添加后完成"规则 ✅、三件套 ✅。<br>
+      遗留可选优化:① <code>count != times</code> 换成 <code>!==</code>;② 添加按钮也判断空输入。
+    </div>
+
+    <h3>常见错误对照表</h3>
+    <table>
+      <tr><th>报错/现象</th><th>原因</th><th>解法</th></tr>
+      <tr><td>xxx is not defined</td><td>变量没声明 / 拼写错了</td><td>检查拼写,先 const/let 声明</td></tr>
+      <tr><td>Cannot read properties of null</td><td>querySelector 没抓到元素</td><td>检查 id 拼写;<code>&lt;script&gt;</code> 要在元素之后</td></tr>
+      <tr><td>点击没反应</td><td>事件名写错 / 函数没绑定</td><td>确认 <code>addEventListener('click', ...)</code></td></tr>
+      <tr><td>if 永远走一个分支</td><td>把 <code>===</code> 写成 <code>=</code></td><td>赋值 <code>=</code>,比较 <code>===</code></td></tr>
+      <tr><td>报错说 Unexpected token</td><td>用了中文标点(引号/分号/括号)</td><td>全改成英文半角符号</td></tr>
+    </table>
+
+    <div class="tip">
+      <strong>为什么本课到此为止?</strong>阶段 0 是地基,目标"让页面能交互"。剩下的 <code>fetch</code>(网络请求)、async(异步)、模块化,会在阶段 2 的 Next.js 项目里结合实际学——那才是它们的主场。现在把基础打牢,后面飞起来。
+    </div>
+
+    <h3>参考资料</h3>
+    <ul class="filelist">
+      <li><a href="lesson03-example.html">lesson03-example.html</a>(作业1示例)</li>
+      <li><a href="cheatsheet-js.md">cheatsheet-js.md</a>(完整速查卡)</li>
+      <li><a href="lesson03-answers.md">lesson03-answers.md</a>(练习A/B参考解答)</li>
+      <li><a href="quiz03-js.md">quiz03-js.md</a>(自查测验 12 题)</li>
+      <li><a href="check-lesson03.mjs">check-lesson03.mjs</a>(作业1验收脚本)</li>
+    </ul>
+  </section>
+
+    <!-- ================= 第 4 课 ================= -->
+  <section class="lesson">
+    <h2>第 4 课:Git + GitHub —— 把作品上线<span class="badge gray">⏳ 待开始</span></h2>
+
+    <p><strong>Git 是什么?</strong>版本管理工具:记录每次改动,随时回到任意历史版本,像游戏存档。以后所有正式项目都必须用它。</p>
+
+    <h3>三个区域(核心概念)</h3>
+    <pre><code>工作区(正在改的文件)
+   │  git add    ← 放进"购物车"
+   ▼
+暂存区(准备提交的改动)
+   │  git commit ← 结账存档,写备注
+   ▼
+本地仓库(历史存档)
+   │  git push   ← 上传云端
+   ▼
+远程仓库(GitHub)</code></pre>
+
+    <h3>7 条命令(按顺序记)</h3>
+    <table>
+      <tr><th>命令</th><th>作用</th></tr>
+      <tr><td><code>git init</code></td><td>初始化仓库(每个项目一次)</td></tr>
+      <tr><td><code>git status</code></td><td>看状态:改了什么、哪些没提交</td></tr>
+      <tr><td><code>git add .</code></td><td>把改动放进暂存区</td></tr>
+      <tr><td><code>git commit -m "备注"</code></td><td>存档,备注写清楚改了什么</td></tr>
+      <tr><td><code>git remote add origin 仓库地址</code></td><td>关联 GitHub 仓库(一次)</td></tr>
+      <tr><td><code>git push -u origin main</code></td><td>第一次推送</td></tr>
+      <tr><td><code>git push</code></td><td>之后每次推送</td></tr>
+    </table>
+
+    <h3>日常工作循环</h3>
+    <pre><code>改代码 → git add . → git commit -m "完成XX功能" → git push</code></pre>
+
+    <h3>上线三步(GitHub Pages)</h3>
+    <ol>
+      <li>GitHub 新建仓库(my-first-page,Public,不勾 README)</li>
+      <li>本地推送(上面 7 条命令)</li>
+      <li>Settings → Pages → main 分支 → Save,等 1~2 分钟拿到链接</li>
+    </ol>
+
+    <div class="warn">
+      <strong>✍️ 作业(分两步)</strong><br>
+      第 1 步(今天,10 分钟):在 stage0 目录执行 <code>git init</code> → <code>git add .</code> → <code>git commit -m "第1-3课作业"</code>,用 <code>git status</code> 确认"nothing to commit" = 第一个存档点完成。<br>
+      第 2 步(学完 GitHub 部分):注册 GitHub → 建仓库 → <code>git remote add origin</code> → <code>git push -u origin main</code> → 开启 GitHub Pages,把链接发我 = 本课完成。
+    </div>
+
+    <h3>参考资料</h3>
+    <ul class="filelist">
+      <li><a href="cheatsheet-git.md">cheatsheet-git.md</a>(速查卡)</li>
+      <li><a href="lesson04-github.md">lesson04-github.md</a>(GitHub 上手指南)</li>
+    </ul>
+  </section>
+
+  <!-- ================= 毕业项目 ================= -->
+  <section class="lesson">
+    <h2>毕业项目:个人主页<span class="badge gray">⏳ 待开始</span></h2>
+    <p>规则:<strong>不看教程、不翻示例、不用 AI 代写</strong>,独立完成一个个人主页(名字、介绍、图片、技能列表、联系方式、按钮交互、卡片式 CSS),推到 GitHub 拿到链接 = 阶段 0 毕业 🎓</p>
+    <p>完整需求与验收标准:<a href="final-project.md">final-project.md</a></p>
+  </section>
+
+  <!-- ================= 阶段 1 预习 ================= -->
+  <section class="lesson">
+    <h2>阶段 1 预习:TypeScript + React</h2>
+    <p>毕业项目是"德州仪器职位筛选看板",真实数据已备好:<a href="../stage1/data/ti-jobs.json">69 条 TI 职位数据</a> · 路线图:<a href="../stage1/README.md">stage1/README.md</a></p>
+  </section>
+
+  <!-- ================= 答疑记录 ================= -->
+  <section class="lesson">
+    <h2>📖 答疑记录(讲解同步区)<span class="badge gray">持续更新</span></h2>
+    <p>聊天里讲过的重点讲解都会归档到这里:聊天说一份,网页存一份,刷新即看,不再翻聊天记录。</p>
+
+    <!-- 条目 1 -->
+    <h3>2026-09-02 · 作业2详解:计数器 + 待办清单的 3 个坑</h3>
+
+    <p><strong>坑 1:Document 大写 → 整个程序停摆</strong></p>
+    <pre><code>// ❌ 大写 Document 不存在,这一行直接报错,后面的代码全部不执行
+const check = Document.querySelector('#check');
+// ✅ JS 严格区分大小写,页面对象是小写 document
+const check = document.querySelector('#check');</code></pre>
+
+    <p><strong>坑 2:DOM 元素 ≠ 数组(.push 会报错)</strong></p>
+    <pre><code>// ❌ list 是 &lt;ul&gt; 元素(一个"盒子"),不是数组,没有 .push 方法
+list.push(itemInput.value);   // list.push is not a function
+
+// ✅ 往页面上"长"新元素要用三件套:
+const li = document.createElement('li');   // ① 造一张新纸(li 标签)
+li.textContent = itemInput.value;          // ② 往纸上写字
+list.appendChild(li);                      // ③ 贴到 &lt;ul&gt; 墙上</code></pre>
+
+    <p><strong>坑 3:顺序反了 —— 先检查,再干活</strong></p>
+    <pre><code>if (itemInput.value === '') {   // 先检查空值
+  alert('请输入待办事项');
+  return;                       // return = 立即结束,下面不执行
+}
+// 通过检查才执行:造 li → 写字 → 上墙 → 清空输入框
+itemInput.value = '';           // 添加成功后清空,方便连输</code></pre>
+
+    <p><strong>附带知识点:计数器状态为什么放函数外</strong></p>
+    <pre><code>let count = 0;   // 放外面:每次点击都"记得"上次的值(全局状态)
+button.addEventListener('click', function () {
+  count = count + 1;   // 如果 count 在函数里声明,每次点击都从 0 开始
+});</code></pre>
+
+    <p>完整对照示例:<a href="lesson03b-example.html">lesson03b-example.html</a></p>
+
+    <!-- 条目 1.5:作业2 代码批注版 -->
+    <h3>2026-09-02 · 作业2·代码批注版(逐行点评你的 lesson03b.html)</h3>
+    <p>下面是你提交的 <code>lesson03b.html</code> 里的 &lt;script&gt; 代码(13:37 版本),每行都标了点评。先看批注,再看下面的详解。</p>
+
+    <pre><code>let count = 0;                                            ✅ 状态放函数外,正确!点击多次会累加
+const addButton = document.querySelector('#add');          ✅ 抓到"添加"按钮
+const list = document.querySelector('#list');              ✅ 抓到 &lt;ul&gt;
+const countElement = document.querySelector('#countElement');  ✅ 抓到计数显示区
+const itemInput = document.querySelector('#itemInput');    ✅ 抓到输入框
+const check = Document.querySelector('#check');            ❌ 坑1:Document 大写!
+                                                             JS 区分大小写,浏览器只认识小写 document;
+                                                             这一行报错 → 下面所有代码全部不执行
+countElement.textContent = `${count}项代办清单`;            ✅ 页面打开就显示"0项代办清单"
+addButton.addEventListener('click', function(){
+    count++;                                               ✅ 每点一次加 1
+    countElement.textContent = `${count}项代办清单`;        ✅ 同步更新显示
+    list.push(itemInput.value);                            ❌ 坑2:list 是 &lt;ul&gt; 元素,不是数组!
+                                                             .push() 只属于数组 → 报错 not a function;
+                                                             正确:createElement → textContent → appendChild
+    if(itemInput.value == ''){                             ⚠️ 坑3:检查放太晚 + 用了 ==
+        alert('请输入待办事项');                             顺序应改为:先检查(用 ===)→ return → 再添加
+    }
+});</code></pre>
+
+    <h3>三个坑的详细解释</h3>
+
+    <p><strong>坑 1:第 6 行 <code>Document</code> 大写 → 整个程序"停摆"</strong></p>
+    <p><code>document</code>(小写)是浏览器给你的页面对象;大写 <code>Document</code> 不存在。JS 从上往下执行,这一行抛出
+    <code>Uncaught ReferenceError: Document is not defined</code> 后,<strong>后面的代码全部不会执行</strong>——
+    所以你的计数器、添加功能其实从来没生效过。控制台里试一下:输入 <code>document</code> 有东西,输入 <code>Document</code> 直接报错。</p>
+
+    <p><strong>坑 2:第 12 行 <code>list.push(...)</code> → 元素不是数组</strong></p>
+    <p><code>list = document.querySelector('#list')</code> 拿到的是页面上的 &lt;ul&gt; 元素——一个"盒子"。<code>.push()</code> 是<strong>数组</strong>的方法,盒子没有 → 报错 <code>list.push is not a function</code>。
+    往页面上"长"出新元素,永远用这三件套:</p>
+    <pre><code>const li = document.createElement('li');  // ① 造一个新 li(打印一张纸)
+li.textContent = itemInput.value;         // ② 往纸上写字
+list.appendChild(li);                     // ③ 把纸贴到 &lt;ul&gt; 墙上</code></pre>
+
+    <p><strong>坑 3:第 13-16 行检查放太晚 + 用了 <code>==</code></strong></p>
+    <p>先 <code>count++</code>、先写内容,最后才检查空值——空输入已经被记进去了。正确顺序永远是"先检查、后干活",并且判断相等用 <code>===</code>(<code>==</code> 会偷偷做类型转换,容易出怪 bug):</p>
+    <pre><code>if (itemInput.value === '') {   // 先检查
+  alert('请输入待办事项');
+  return;                        // return = 立即结束,下面不执行
+}
+// 通过检查,才执行:count++ / 三件套 / 清空输入框</code></pre>
+
+    <p><strong>另外:作业要求里还缺一个独立的"+1"按钮</strong>——你现在把"添加待办的次数"当成了计数,作业要的是一个按钮点一次 +1。HTML 里加 <code>&lt;button id="plusBtn"&gt;+1&lt;/button&gt;</code>,单独写它的监听(逻辑你其实已经会了:<code>count++</code> + 更新显示)。</p>
+
+    <p><strong>修正版参考</strong>:<a href="lesson03b-example.html">lesson03b-example.html</a>(带逐行注释);上面的三个坑在主页第 3 课 D 部分也有完整讲义。</p>
+    <p>修正清单:① Document → document ② push → 三件套 ③ 检查提前 + === ④ 加 +1 按钮 ⑤ 添加成功后 <code>itemInput.value = ''</code> 清空。</p>
+
+    <!-- 条目 1.6:作业2 第二轮批注 -->
+    <h3>2026-09-02 · 作业2·第二轮批注(14:04 修正版)</h3>
+
+    <p><strong>✅ 先报喜:三个技术坑全部修对</strong></p>
+    <ul>
+      <li><code>Document</code> → <code>document</code> ✅ 程序不再停摆</li>
+      <li><code>list.push(...)</code> → <code>createElement</code> + <code>textContent</code> + <code>appendChild</code> ✅ 三件套用上了</li>
+      <li>检查提前 + <code>return</code> ✅ 守卫语句(guard)的习惯很好,这是专业写法</li>
+    </ul>
+
+    <p><strong>🔧 新问题(结构级):事件监听"嵌套"了,职责也串了</strong></p>
+    <p>你现在把"完成"按钮的监听,写在了"添加"按钮的监听<strong>里面</strong>:</p>
+    <pre><code>addButton.addEventListener('click', function(){   // 外层:添加按钮
+  ...
+  check.addEventListener('click', function(){       // 内层:完成按钮被包在里面!
+    ...
+  })
+});</code></pre>
+    <p>问题 1:<strong>不点"添加",check 监听永远不会注册</strong>——因为内层代码要等外层执行才执行。<br>
+    问题 2:每个按钮的监听应该<strong>平级并列</strong>,像三个人各管各的活,谁也不包谁。</p>
+
+    <p><strong>📋 按钮职责表(本课作业该有的样子)</strong></p>
+    <table>
+      <tr><th>按钮</th><th>只管这件事</th></tr>
+      <tr><td><code>+1 按钮</code>(id: plusBtn)</td><td><code>count++</code>,更新显示</td></tr>
+      <tr><td><code>添加按钮</code>(id: add)</td><td>读输入框 → 三件套上墙 → 清空输入框</td></tr>
+      <tr><td><code>完成按钮</code>(id: check)</td><td>本课先不管(那是下一课的"标完成"功能)</td></tr>
+    </table>
+
+    <p><strong>正确的骨架(两个平级监听 + 计数器)</strong></p>
+    <pre><code>let count = 0;
+
+// 监听 1:计数器(平级,不包别人)
+plusBtn.addEventListener('click', function(){
+  count = count + 1;
+  countElement.textContent = count + ' 个待办';
+});
+
+// 监听 2:添加待办(平级,不包别人)
+addBtn.addEventListener('click', function(){
+  if (itemInput.value === '') { alert('请输入待办事项'); return; }
+  const li = document.createElement('li');
+  li.textContent = itemInput.value;
+  list.appendChild(li);
+  itemInput.value = '';
+});</code></pre>
+    <p>对照示例:<a href="lesson03b-example.html">lesson03b-example.html</a>。修改目标:打开页面后,<strong>+1 按钮点一次数字加一,添加按钮把输入变成列表项</strong>,两个功能互不干扰。</p>
+
+    <!-- 条目 1.7:为什么不能嵌套 -->
+    <h3>2026-09-02 · 学生提问:"不点添加就不能点完成,我的嵌套设计不是对的吗?"</h3>
+
+    <p><strong>你的直觉是对的</strong>:"没添加就不该能完成"——这是一条合理的业务规则,会想到规则层面,说明你在认真思考,这比抄作业强得多。</p>
+
+    <p><strong>但"防"的方式错了</strong>:你用"把完成按钮的监听<strong>包在</strong>添加按钮的点击里(嵌套)"来防。问题在于:</p>
+    <ul>
+      <li><strong>技术上</strong>:完成按钮的监听要等"添加"被点过一次才注册。打开页面什么都不点、直接点完成——没反应,因为监听<strong>根本不存在</strong>。结果碰巧符合你的预期,但这是"没注册",不是"规则拦截",控制台没有任何提示,以后排错会疯。</li>
+      <li><strong>可读性</strong>:两个按钮的代码纠缠在一起,几天后你自己都看不懂。</li>
+    </ul>
+
+    <p><strong>正确的防法:监听器永远平级注册,规则用 if 写在函数体里</strong></p>
+    <pre><code>// 两个监听都平级,谁都不包谁 —— 但它们内部各有规则
+checkBtn.addEventListener('click', function () {
+  if (tasks.length === 0) {          // 规则:还没添加过任务
+    alert('还没有待办,先点添加');
+    return;
+  }
+  // 完成逻辑...
+});
+
+addBtn.addEventListener('click', function () {
+  if (input.value === '') { alert('请输入内容'); return; }
+  // 添加逻辑...
+});</code></pre>
+    <p>这样"不能完成未添加的任务"照样成立,而且每个按钮的逻辑独立清晰。<strong>核心心法:事件监听 = 只负责"听到点击就执行函数";规则 = 函数体里的 if。</strong></p>
+
+    <p><strong>另外</strong>:作业 2 的原始要求只有两个功能(+1 计数、添加列表),"完成"按钮是你自己加的——你其实想做一个"添加→完成"的完整待办流程。这是更进阶的项目,需要用<strong>数组做状态</strong>记住"已添加的任务"。想学的话走路线 B(老师带做真流程),想先推进度走路线 A(按作业要求完成验收)。</p>
+
+    <!-- 条目 1.8:作业2 第三轮批注 -->
+    <h3>2026-09-02 · 作业2·第三轮批注(19:17 版):结构达成,剩 3 个小 bug</h3>
+
+    <p><strong>✅ 两个结构级目标全部达成</strong></p>
+    <ul>
+      <li>两个监听已经<strong>平级</strong>了(不再嵌套)——第二轮的核心要求完成</li>
+      <li>用 <code>judge</code> 变量实现了你自己坚持的规则"先添加才能完成"——上一轮争论的点,你用 if + 变量实现了,<strong>方向完全正确</strong></li>
+    </ul>
+
+    <p><strong>🔧 剩 3 个小 bug</strong></p>
+    <p>1. <code>judge = 0;</code> 写在监听函数<strong>外面</strong> → 只在页面加载时执行一次;完成一次后 judge 永远停在 1,"必须再添加"的规则就失效了。应写进 check 函数里、"完成逻辑之后":每完成一件就 <code>judge = 0</code>,回到"等待下一次添加"。</p>
+    <pre><code>check.addEventListener('click', function () {
+  if (judge === 0) { alert('请先添加待办事项'); return; }
+  if (itemInput.value === '') { alert('请输入待办事项'); return; }
+  // ...三件套上墙...
+  itemInput.value = '';
+  judge = 0;        // ✅ 放这里:完成后回到"无待办"状态
+});</code></pre>
+    <p>2. <code>times++</code> 写了<strong>两次</strong> → 完成一件算两件。删掉一个。</p>
+    <p>3. 判断统一 <code>===</code>(<code>judge == 0</code> → <code>judge === 0</code>)。</p>
+    <p>另外建议:计数标题"X项代办清单"里 count 只加不减,更像"已添加总数"——要么完成时也让 count 减一(当前待办数),要么把标题改成"已添加 X 件"。</p>
+    <p><strong>修正后预期流程</strong>:添加(锁定,alert 拦截)→ 完成(内容入列表、清空输入、judge 归零)→ 可以再添加下一个。</p>
+
+    <!-- 条目 1.9:作业2 验收通过 -->
+    <h3>2026-09-02 · 作业2 验收通过,第 3 课毕业 🎓</h3>
+    <p>第三轮修正验收(19:23 版):<code>judge = 0</code> 已挪进 check 函数内并正确回位 ✅、<code>times++</code> 重复已删 ✅、<code>===</code> 已用上 ✅、文件确认保存 ✅。</p>
+    <p>恭喜:用 <code>judge</code> 变量实现自己设计的"先添加后完成"规则——业务规则 + 状态变量,这正是编程的核心思维。</p>
+    <p>两个可选优化(不影响毕业):① <code>count != times</code> 统一成 <code>!==</code>;② 添加按钮也判断空输入(否则可以先"添加"空任务,再被完成按钮的空值检查卡住)。</p>
+
+    <!-- 条目 1.10:第4课开课 -->
+    <h3>2026-09-02 · 第 4 课开课:你的第一个 git 存档点</h3>
+    <p>第 3 课毕业后的下一步。Git = 版本管理工具(游戏存档);核心是三个区域:<code>工作区 → git add → 暂存区 → git commit → 仓库(存档)→ git push → GitHub</code>。</p>
+    <p><strong>今日作业(第 1 步)</strong>:在 stage0 目录执行:</p>
+    <pre><code>git init
+git add .
+git commit -m "第1-3课作业:个人介绍页+CSS+JS互动"</code></pre>
+    <p>然后 <code>git status</code> 应显示 nothing to commit。这三条 = 你的第一个存档点;以后每改完一版就 add + commit 一次。</p>
+    <p><strong>第 2 步</strong>(GitHub 上线):见本课作业区与 <a href="lesson04-github.md">lesson04-github.md</a>。</p>
+
+    <!-- 条目 2 -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <h3>2026-09-02 · CSS 的 cursor 和 border 是干嘛的</h3>
+    <p><strong>cursor</strong>:鼠标指针的样式。可点击元素(按钮/卡片/链接)加 <code>cursor: pointer;</code> 显示小手,提示"这个能点"。</p>
+    <pre><code>button { cursor: pointer; }        // 小手
+input  { cursor: text; }           // I 形光标(默认就有)
+button:disabled { cursor: not-allowed; }  // 禁止符号</code></pre>
+    <p><strong>border</strong>:元素的边框,是盒模型的一层(margin → border → padding → 内容)。</p>
+    <pre><code>.box { border: 2px solid #333; }   // 宽度 样式 颜色
+h2 { border-left: 4px solid #1f6feb; }  // 只画左边(标题装饰)
+// 样式: solid 实线 / dashed 虚线 / dotted 点线</code></pre>
+    <p>调试神器:<code>* { border: 1px solid red; }</code> 给所有元素加红框,一眼看清每个盒子占多大。</p>
+  </section>
+
+  <footer>
+    📌 本页每次讲课后都会更新,浏览器刷新即可看到最新内容。<br>
+    作业仍通过聊天提交,老师会在聊天里批改并同步到本页。
+  </footer>
+</div>
+</body>
+</html>

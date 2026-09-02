@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang = "zh-CN">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>待办清单</title>
+        <style>
+            body{
+                background-color:rgb(228, 222, 222);
+                font-family:PingFang SC, Microsoft YaHei, sans-serif;
+            }
+            .card{
+                max-width:600px;
+                margin:40px auto;
+                padding:24px;
+                background-color:rgb(255, 255, 255);
+                border-radius:12px;
+            }
+            h1{
+                color:rgb(22, 111, 227);
+            }
+            input{
+                padding:40px;
+                border:1px solid #ccc;
+                border-radius:6px;
+            }
+            button{
+                background-color:black;
+                color:white;
+                padding:10px;
+                border:none;
+                border-radius:6px;
+                cursor:pointer;
+            }
+        </style>
+        <body>
+            <div class = "card">
+                <h1>待办清单</h1>
+                <h2 id = "countElement"></h2>
+                <button id = "add">添加</button>
+                <input id = "itemInput" placeholder = "请输入待办事项">
+                <button id = "check">完成</button>
+                <ul id = "list">
+                </ul>
+            </div>
+            <script>
+                let count = 0;
+                let judge = 0;
+                let times = 0;
+                const addButton = document.querySelector('#add');
+                const list = document.querySelector('#list');
+                const countElement = document.querySelector('#countElement');
+                const itemInput = document.querySelector('#itemInput');
+                const check = document.querySelector('#check');
+                countElement.textContent = `${count}项代办清单`;
+                addButton.addEventListener('click', function(){
+                    if(count != times){
+                        alert('请先完成当前待办事项');
+                        return;
+                    }
+                    count++;
+                    countElement.textContent = `${count}项代办清单`;
+                    judge = 1;
+                });
+                check.addEventListener('click', function(){
+                    if(judge === 0){
+                        alert('请先添加待办事项');
+                        return;
+                    }
+                        if(itemInput.value === ''){
+                        alert('请输入待办事项');
+                        return;
+                        }
+                        const li = document.createElement('li');
+                        li.textContent = itemInput.value;
+                        list.appendChild(li);
+                        itemInput.value = '';
+                        times++;
+
+                    judge = 0;
+                    });
+            </script>
+        </body>
+    </head>
+</html>

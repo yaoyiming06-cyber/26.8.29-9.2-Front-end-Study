@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>打招呼页面</title>
+  <style>
+    /* 给页面简单打扮一下(可选,自己发挥) */
+    body { font-family: sans-serif; }
+  </style>
+</head>
+<body>
+  <h1>来打个招呼吧</h1>
+
+  <!-- 1. 输入框:id 给 JS 用 -->
+  <input id="nameInput" placeholder="输入你的名字">
+
+  <!-- 2. 按钮:id 给 JS 用 -->
+  <button id="greetBtn">打招呼</button>
+
+  <!-- 3. 结果区:JS 会把话写到这里 -->
+  <p id="greeting"></p>
+
+  <script>
+    // ===== 这里开始你自己写(3 步)=====
+
+    // 第 1 步:用 querySelector 抓住上面三个元素
+    //   提示:const xxx = document.XXXX('#nameInput');
+
+    // 第 2 步:给按钮加点击监听
+    //   提示:btn.XXXX('click', function () { ... });
+
+    // 第 3 步:点击后读输入框的内容,用 if 判断
+    //   空 → 提示"先输入你的名字呀!"
+    //   有字 → 显示"你好,xxx!"
+    //   提示:value 读内容,textContent 写文字
+  </script>
+</body>
+</html>

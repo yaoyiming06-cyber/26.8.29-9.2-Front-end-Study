@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的个人介绍页(JS 版)</title>
+  <style>
+    body { background-color: #f5f7fa; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+    .card { max-width: 600px; margin: 40px auto; padding: 24px; background: #fff; border-radius: 12px; }
+    h1 { color: #1f6feb; }
+    input { padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
+    button { padding: 8px 16px; background: #1f6feb; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+    #greeting { color: #1f6feb; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>你好,我是小明 👋</h1>
+    <p>一个正在学习编程的准程序员。</p>
+
+    <h2>和我打个招呼吧</h2>
+    <input id="nameInput" placeholder="输入你的名字">
+    <button id="greetBtn">打招呼</button>
+    <p id="greeting"></p>
+
+    <h2>我的爱好</h2>
+    <ul>
+      <li>写代码</li>
+      <li>打篮球</li>
+      <li>看电影</li>
+    </ul>
+  </div>
+
+  <script>
+    // JS 代码写在这里(放在 </body> 前面)
+    // 1. 先"抓住"页面上的三个元素
+    const button = document.querySelector('#greetBtn');   // # 表示 id
+    const input = document.querySelector('#nameInput');
+    const greeting = document.querySelector('#greeting');
+
+    // 2. 给按钮装上"点击监听器":点击时执行花括号里的函数
+    button.addEventListener('click', function () {
+      // 3. 读输入框里用户打了什么
+      const name = input.value;
+
+      // 4. 根据情况,把文字写进 <p id="greeting">
+      if (name === '') {
+        greeting.textContent = '先输入你的名字呀!';
+      } else {
+        greeting.textContent = '你好,' + name + '!很高兴认识你 👋';
+      }
+    });
+  </script>
+</body>
+</html>

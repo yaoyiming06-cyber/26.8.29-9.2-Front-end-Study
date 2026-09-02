@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的个人介绍页(CSS 版)</title>
+  <style>
+    /* CSS 语法: 选择器 { 属性: 值; } */
+
+    /* 1. 标签选择器:直接写标签名,影响所有同类标签 */
+    body {
+      background-color: #f5f7fa;                    /* 页面背景浅灰 */
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    /* 2. class 选择器:以 . 开头,给标签挂 class 复用 */
+    .card {
+      max-width: 600px;      /* 卡片最大宽度 */
+      margin: 40px auto;     /* 上下 40px,左右自动 → 水平居中 */
+      padding: 24px;         /* 内容与卡片边缘的间距 */
+      background-color: #ffffff;   /* 卡片白色 */
+      border-radius: 12px;         /* 圆角 */
+    }
+
+    h1 {
+      color: #1f6feb;        /* 标题蓝色 */
+    }
+
+    .intro {
+      color: #555555;        /* 介绍文字灰色 */
+      line-height: 1.8;      /* 行高 1.8 倍,读起来舒服 */
+    }
+
+    .link a {
+      color: #1f6feb;        /* 链接也变蓝 */
+    }
+  </style>
+</head>
+<body>
+  <!-- 把内容包进一个 div 卡片里 -->
+  <div class="card">
+    <h1>你好,我是小明 👋</h1>
+    <p class="intro">一个正在学习编程的<strong>准程序员</strong>。</p>
+
+    <h2>我的爱好</h2>
+    <ul>
+      <li>写代码</li>
+      <li>打篮球</li>
+      <li>看电影</li>
+    </ul>
+
+    <h2>我喜欢的网站</h2>
+    <p class="link">去 <a href="https://developer.mozilla.org/zh-CN/" target="_blank">MDN</a> 学前端。</p>
+  </div>
+</body>
+</html>

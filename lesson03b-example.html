@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>计数器 + 待办清单(示例)</title>
+  <style>
+    body {
+      background-color: #f5f7fa;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .card {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 24px;
+      background-color: #ffffff;
+      border-radius: 12px;
+    }
+    h1 { color: #1f6feb; }
+    button {
+      background-color: #1f6feb;
+      color: #ffffff;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>计数器 + 待办清单</h1>
+
+    <!-- ① 计数器区:数字 + "+1"按钮 -->
+    <p>点击次数:<strong id="countShow">0</strong></p>
+    <button id="plusBtn">+1</button>
+
+    <hr>
+
+    <!-- ② 待办区:输入框 + 添加按钮 -->
+    <h2>待办清单</h2>
+    <input id="itemInput" placeholder="输入待办事项">
+    <button id="addBtn">添加</button>
+    <ul id="list"></ul>
+  </div>
+
+  <script>
+    // ===== 计数器 =====
+    let count = 0;   // 状态放函数外:每次点击要"记得"上一次的值
+    const countShow = document.querySelector('#countShow');
+    const plusBtn = document.querySelector('#plusBtn');
+
+    plusBtn.addEventListener('click', function () {
+      count = count + 1;                 // count++ 也可以
+      countShow.textContent = count;     // 把新数字写回页面
+    });
+
+    // ===== 待办清单 =====
+    const itemInput = document.querySelector('#itemInput');
+    const addBtn = document.querySelector('#addBtn');
+    const list = document.querySelector('#list');
+
+    addBtn.addEventListener('click', function () {
+      // 1. 先检查:空内容直接走人
+      if (itemInput.value === '') {
+        alert('请输入待办事项');
+        return;                       // return 结束函数,下面不执行
+      }
+
+      // 2. 三件套:造 li → 写字 → 上墙
+      const li = document.createElement('li');
+      li.textContent = itemInput.value;
+      list.appendChild(li);
+
+      // 3. 清空输入框,方便连输
+      itemInput.value = '';
+    });
+  </script>
+</body>
+</html>
