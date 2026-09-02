@@ -781,7 +781,33 @@ git commit -m "第1-3课作业:个人介绍页+CSS+JS互动"</code></pre>
     <p>线上地址:<a href="https://yaoyiming06-cyber.github.io/26.8.29-9.2-Front-end-Study/" target="_blank">https://yaoyiming06-cyber.github.io/26.8.29-9.2-Front-end-Study/</a>(已验证 HTTP 200,标题与内容正确)</p>
     <p>阶段 0 四课全部毕业 ✅ 下一关:毕业项目(个人主页)。</p>
 
+    <!-- 条目 1.12:补课 img 与 mailto -->
+    <h3>2026-09-02 · 补课:<code>&lt;img&gt;</code> 图片 和 <code>mailto:</code> 邮件链接(老师漏教,抱歉)</h3>
+    <p>郭兆辉指出:验收要求里用了 <code>&lt;img&gt;</code> 和 <code>mailto:</code>,但课上没正式教过——这是老师课程设计的疏漏,特此补课(补完毕业项目就能改)。</p>
+
+    <p><strong>① &lt;img&gt; 图片标签(自闭合,没有</img>)</strong></p>
+    <pre><code>&lt;img src="图片地址" alt="图片坏了时显示的文字"&gt;
+
+// src 有两种写法:
+// 网络图:直接放网址
+&lt;img src="https://picsum.photos/200/200" alt="我的头像"&gt;
+// 本地图:图片文件和 html 放同一个文件夹,写文件名
+&lt;img src="me.jpg" alt="我的头像"&gt;
+
+// 关键坑:file:///Users/xxx/... 是"你自己电脑的路径",
+// 别人打开你的网页看不到(浏览器禁止网页访问本地文件);
+// HEIC(iPhone照片格式)浏览器也不支持 → 转成 jpg/png 或直接用网络图</code></pre>
+
+    <p><strong>② mailto: 邮件链接(点一下自动打开邮件客户端)</strong></p>
+    <pre><code>&lt;a href="mailto:你的邮箱@xx.com"&gt;给我发邮件&lt;/a&gt;
+// 还能预填主题:
+&lt;a href="mailto:a@b.com?subject=我想跟你聊聊"&gt;发邮件&lt;/a&gt;</code></pre>
+
+    <p>毕业项目邮箱修正:<code>href="mailto:yaoyiming06@gmail.com"</code>(注意 gamil → gmail 拼写)。</p>
+
     <!-- 条目 2 -->
+
+
 
 
 

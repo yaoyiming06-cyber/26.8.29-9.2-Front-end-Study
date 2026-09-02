@@ -2,7 +2,7 @@
 <html lang = "zh-CN">
     <head>
         <meta charset = "UTF-8">
-        <meta name = "viewpoint" content = "width-device-width, initial-scale = 1.0">
+        <meta name = "viewport" content = "width-device-width, initial-scale = 1.0">
         <title>个人主页</title>
         <style>
             body{
@@ -35,7 +35,7 @@
             <div class = "card">
                 <h1>我的名字是<strong>郭兆辉</strong></h1>
                 <p>二十少年，修学不倦，修心不止</p>
-                <img src = "file:///Users/a0000/Pictures/Photos%20Library.photoslibrary/originals/1/10595EC6-B505-4888-87EF-32F10E110DBD.heic" alt = "我的头像" width = "200px">
+                <img src = "https://example.com/avatar.jpg" alt = "我的头像" width = "200px">
                 <h2>我的技能</h2>
                 <ul>
                     <li>正在学习 HTML/CSS/JS</li>
@@ -44,20 +44,20 @@
                     <li>女生猎杀者</li>
                 </ul>
                 <h2>我的邮箱</h2>
-                <a href = "https://mail.google.com/mail/u/0/#inbox" target = "_blank">yaoyiming06@gamil.com</a>
+                <a href = "mailto:yaoyiming06@gmail.com">yaoyiming06@gmail.com</a>
                 <h2>想了解更多？</h2>
                 <p>访问我的<a href = "https://www.douyin.com/user/self?from_tab_name=main" target = "_blank">抖音</a></p>
                 <h3>告诉你一个秘密......</h3>
                 <button id = "secretbutton">是什么？</button>
                 <p id = "secret"></p>
             </div>
+            <script>
+                const secretbutton = document.querySelector('#secretbutton');
+                const secret = document.querySelector('#secret');
+                secretbutton.addEventListener('click', function(){
+                    secret.textContent = '我明天回学校了';
+                })
+            </script>
         </body>
-        <script>
-            const secretbutton = document.querySelector('#secretbutton');
-            const secret = document.querySelector('#secret');
-            secretbutton.addEventListener('click', function(){
-                secret.textContent = '我明天回学校了';
-            })
-        </script>
     </head>
 </html>
